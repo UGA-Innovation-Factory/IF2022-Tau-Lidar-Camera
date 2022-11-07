@@ -12,8 +12,8 @@ from cv_bridge import CvBridge
 class LidarPublisher(Node):
     def __init__(self):
         super().__init__('tau_lidar_publisher')
-        self.publisher_depth_ = self.create_publisher(Image, 'Tau/depth', 1)
-        self.publisher_gray_ = self.create_publisher(Image, 'Tau/greyscale', 1)
+        self.publisher_depth_ = self.create_publisher(Image, 'Tau/depth', 10)
+        self.publisher_gray_ = self.create_publisher(Image, 'Tau/greyscale', 10)
         timer_period = 0.05  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
